@@ -55,3 +55,55 @@
         </tr>
     </tbody>
 </table>
+<h2>Most Recent Coffee</h2>
+<table class="table">
+    <tr>
+        <th>
+            <a asp-action="Brew">Brew New Coffee</a>
+        </th>
+        <th>
+            <a asp-action="History">View Coffee History</a>
+        </th>
+    </tr>
+</table>
+@if (Model.DrinkCount > 0)
+{
+    <h2>Last Drink:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h4>A @Model.LastDrinkName() Made Of @Model.LastDrinkContent()</h4>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    <p>Size: @Model.LastDrinkSize()</p>
+                </th>
+            </tr>
+            @if (Model.LastDrinkSugar() != "0 Sugar")
+            {
+                <tr>
+                    <th>
+                        <p>@Model.LastDrinkSugar()</p>
+                    </th>
+                </tr>
+            }
+            @if (Model.LastDrinkCream() != "0 Cream")
+            {
+                <tr>
+                    <th>
+                        <p>@Model.LastDrinkCream()</p>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else 
+{
+    <p>There appears to be no coffee cups here.</p>
+}

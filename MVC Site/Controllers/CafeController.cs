@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CoffeeMachine;
 using MVC_Site.ViewModels;
+using System;
 
 namespace MVC_Site.Controllers
 {
@@ -14,7 +15,7 @@ namespace MVC_Site.Controllers
             cafe = Toolbox.Instance.coffeeView;
         }
 
-        public IActionResult Index(string Action)
+        public IActionResult Index(string Action, string size, string sugar, string cream)
         {
             Action = Action.ToLower().Trim();
             switch (Action) 
@@ -32,7 +33,39 @@ namespace MVC_Site.Controllers
                     break;
             }
 
+            if (!string.IsNullOrWhiteSpace(size)) 
+            {
+                if (string.IsNullOrWhiteSpace(sugar))
+                    sugar = "0";
+                if (string.IsNullOrWhiteSpace(cream)) 
+                    cream = "0";
+                float si = StringToInt(size);
+                int su = StringToInt(sugar);
+                int cr = StringToInt(cream);
+                cafe.BrewCoffee(si, cr, su);
+            }
+
             return View(cafe);
+        }
+        public IActionResult Brew() 
+        {
+            return View(cafe);
+        }
+        public IActionResult History() 
+        {
+            return View(cafe);
+        }
+
+        public static int StringToInt(string str)
+        {
+            try
+            {
+                return Int32.Parse(str);
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

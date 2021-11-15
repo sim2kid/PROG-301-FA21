@@ -1,0 +1,26 @@
+﻿@model MVC_Site.ViewModels.CoffeeView
+
+@{
+    ViewData["Title"] = "Brew Coffee";
+}
+<h1>Brew New Coffee</h1>
+<table class="table">
+    <tr>
+        <th>
+            <a asp-action="Index">Back to Cafe</a>
+        </th>
+        <th>
+            <a asp-action="History">View Coffee History</a>
+        </th>
+    </tr>
+</table>
+<h2>Coffee Picker</h2>
+<form method="post" asp-action="Index">
+    <label for="size">Coffee Size: </label>
+    <input type="number" min="1" value="16" id="size" name="size" /><br />
+    <label for="sugar"># of Sugars: </label>
+    <input type="number" min="0" value="0" id="sugar" name="sugar" /><br />
+    <label for="cream"># of Creams: </label>
+    <input type="number" min="0" value="0" id="cream" name="cream" /><br />
+    <input type="submit" value="Brew New Coffee">
+</form>

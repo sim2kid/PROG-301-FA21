@@ -1,0 +1,60 @@
+﻿@model MVC_Site.ViewModels.CoffeeView
+
+@{
+    ViewData["Title"] = "Coffee History";
+}
+
+<h1>Coffee History</h1>
+<table class="table">
+    <tr>
+        <th>
+            <a asp-action="Index">Back to Cafe</a>
+        </th>
+        <th>
+            <a asp-action="Brew">Brew New Coffee</a>
+        </th>
+    </tr>
+</table>
+<h2>Coffee List</h2>
+@if (Model.DrinkCount > 0)
+{
+    @for (int i = 0; i < Model.DrinkCount; i++)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <h4>A @Model.LastDrinkName(i) Made Of @Model.LastDrinkContent(i)</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <p>Size: @Model.LastDrinkSize(i)</p>
+                    </th>
+                </tr>
+                @if (Model.LastDrinkSugar(i) != "0 Sugar")
+                {
+                    <tr>
+                        <th>
+                            <p>@Model.LastDrinkSugar(i)</p>
+                        </th>
+                    </tr>
+                }
+                @if (Model.LastDrinkCream(i) != "0 Cream")
+                {
+                    <tr>
+                        <th>
+                            <p>@Model.LastDrinkCream(i)</p>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+else 
+{
+    <p>There appears to be no coffee cups here.</p>
+}
