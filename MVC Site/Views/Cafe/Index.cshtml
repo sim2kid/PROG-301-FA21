@@ -1,0 +1,57 @@
+﻿@model MVC_Site.ViewModels.CoffeeView
+
+@{
+    ViewData["Title"] = "Cafe";
+}
+
+<h1>Le Cafe</h1>
+
+<h2>Coffee Machine Stats</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Coffee Levels
+            </th>
+            <th>
+                Sugar Levels
+            </th>
+            <th>
+                Cream Levels
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                @Html.Raw(Model.GetCoffeeLevels())
+            </th>
+            <th>
+                @Html.Raw(Model.GetSugarLevels())
+            </th>
+            <th>
+                @Html.Raw(Model.GetCreamLevels())
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <form method="post" asp-action="Index">
+                    <input type="hidden" name="Action" value="refillcoffee">
+                    <input type="submit" value="Refill Coffee">
+                </form>
+            </th>
+            <th>
+                <form method="post" asp-action="Index">
+                    <input type="hidden" name="Action" value="refillsugar">
+                    <input type="submit" value="Refill Sugar">
+                </form>
+            </th>
+            <th>
+                <form method="post" asp-action="Index">
+                    <input type="hidden" name="Action" value="refillcream">
+                    <input type="submit" value="Refill Cream">
+                </form>
+            </th>
+        </tr>
+    </tbody>
+</table>

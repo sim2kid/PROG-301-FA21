@@ -50,7 +50,7 @@ namespace MVC_Site
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Cafe}/{action=Index}/{id?}");
             });
         }
     }

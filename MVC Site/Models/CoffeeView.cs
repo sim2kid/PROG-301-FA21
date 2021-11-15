@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CoffeeMachine;
 
-namespace MVC_Site.ViewModel
+namespace MVC_Site.ViewModels
 {
     public class CoffeeView
     {
@@ -18,7 +18,7 @@ namespace MVC_Site.ViewModel
         List<Drink> Drinks { get => _cafe.Drinks; }
 
         public int DrinkCount { get=> Drinks.Count; }
-        public CoffeeView(Cafe? cafe = null) 
+        public CoffeeView(Cafe cafe = null) 
         {
             if(cafe == null)
                 cafe = new Cafe();

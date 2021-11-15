@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CoffeeMachine;
 
-namespace MVC_Site.ViewModel
+namespace MVC_Site.ViewModels
 {
     [Serializable]
     public class Cafe
