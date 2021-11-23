@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC Site", "MVC Site\MVC Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_App", "WPF App\WPF_App.csproj", "{7CA44616-8BCB-4C15-A8F2-5EB94ED3C5D2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Currency", "Currency\Currency.csproj", "{F92A43CC-0098-460D-A7F0-886A07991684}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyMSTest", "CurrencyMSTest\CurrencyMSTest.csproj", "{93427DF9-A447-4801-B1AD-D14481BC9ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7CA44616-8BCB-4C15-A8F2-5EB94ED3C5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CA44616-8BCB-4C15-A8F2-5EB94ED3C5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CA44616-8BCB-4C15-A8F2-5EB94ED3C5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92A43CC-0098-460D-A7F0-886A07991684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92A43CC-0098-460D-A7F0-886A07991684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92A43CC-0098-460D-A7F0-886A07991684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92A43CC-0098-460D-A7F0-886A07991684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93427DF9-A447-4801-B1AD-D14481BC9ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93427DF9-A447-4801-B1AD-D14481BC9ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93427DF9-A447-4801-B1AD-D14481BC9ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93427DF9-A447-4801-B1AD-D14481BC9ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
