@@ -9,12 +9,18 @@
     <Grid Margin="10">
         <StackPanel>
             <StackPanel Orientation="Horizontal">
+                <Label>Currency:</Label>
+                <ComboBox Name="currency" SelectionChanged="Currency_SelectionChanged" DropDownClosed="Currency_DropDownClosed">
+                    <ComboBoxItem IsSelected="True">$USD</ComboBoxItem>
+                    <ComboBoxItem>¥JPY</ComboBoxItem>
+                </ComboBox>
+                
                 <Label>Amount:</Label>
                 <TextBox x:Name="txtChange" PreviewTextInput="PreviewFloatInput">0</TextBox>
-                <Button x:Name="btnMakeChange">Make Change</Button>
+                <Button x:Name="btnMakeChange" Click="MakeChange">Make Change</Button>
             </StackPanel>
-            <ListBox Height="200" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-            <Button x:Name="btnSave" Width="100">Save</Button>
+            <ListBox x:Name="lstContent" Height="200" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <Button x:Name="btnSave" Width="100" IsEnabled="False">Save</Button>
         </StackPanel>
 
     </Grid>
