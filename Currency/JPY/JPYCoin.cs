@@ -8,7 +8,7 @@ namespace Currency.JPY
     {
         public override string About()
         {
-            return $"JPY {_name} was minted in {_year}. It is worth ¥{_value.ToString("0")}. It was made in {GetMintNameFromMark(_mintMark)}";
+            return $"JPY {_name} was minted in {_year}. It is worth ¥{_value.ToString("0")}.";
         }
     }
 }
