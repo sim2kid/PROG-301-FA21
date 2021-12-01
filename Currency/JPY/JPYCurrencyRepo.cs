@@ -6,9 +6,26 @@ namespace Currency.JPY
 {
     public class JPYCurrencyRepo : CurrencyRepo
     {
+
+        public override List<ICoin> ValidCoins
+        {
+            get
+            {
+                List<ICoin> list = new List<ICoin>();
+                list.Add(new OneYen());
+                list.Add(new FiveYen());
+                list.Add(new TenYen());
+                list.Add(new FiftyYen());
+                list.Add(new OneHundredYen());
+                list.Add(new FiveHundredYen());
+                return list;
+            }
+        }
+        public override string Symbol => "¥";
+
         public override string About()
         {
-            return $"This repo has {GetCoinCount()} coins worth a total of ¥{TotalValue().ToString("0")}.";
+            return $"This repo has {GetCoinCount()} coins worth a total of {Symbol}{TotalValue().ToString("0")}.";
         }
 
         public static ICurrencyRepo CreateChange(double Amount)

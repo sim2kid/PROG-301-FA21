@@ -8,7 +8,9 @@ namespace Currency
 {
     public interface ICurrencyRepo
     {
-        public List<ICoin> Coins {get; set;}
+        public List<ICoin> Coins { get; set; }
+        public List<ICoin> ValidCoins { get; }
+        public string Symbol { get; }
 
         public string About();
         public void AddCoin(ICoin c);

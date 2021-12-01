@@ -38,6 +38,8 @@ namespace CurrencyWPF
         bool useFloat, handle;
         Currency currentCurrency;
 
+        
+
         public MainWindow()
         {
             model = new ChangeViewModel();

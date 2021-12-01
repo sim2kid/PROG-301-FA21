@@ -8,9 +8,23 @@ namespace Currency.US
 {
     public class USCurrencyRepo : CurrencyRepo
     {
+        public override List<ICoin> ValidCoins { get {
+                List<ICoin> list = new List<ICoin>();
+                list.Add(new Penny());
+                list.Add(new Nickel());
+                list.Add(new Dime());
+                list.Add(new Quarter());
+                list.Add(new HalfDollar());
+                list.Add(new DollarCoin());
+                return list;
+            } 
+        }
+
+        public override string Symbol => "$";
+
         public override string About()
         {
-            return $"This repo has {GetCoinCount()} coins worth a total of ${TotalValue().ToString("0.00")}.";
+            return $"This repo has {GetCoinCount()} coins worth a total of {Symbol}{TotalValue().ToString("0.00")}.";
         }
 
         public static ICurrencyRepo CreateChange(double Amount)

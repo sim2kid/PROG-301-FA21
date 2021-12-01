@@ -9,6 +9,8 @@ namespace Currency
     public class CurrencyRepo : ICurrencyRepo
     {
         public List<ICoin> Coins { get; set; }
+        public virtual List<ICoin> ValidCoins => new List<ICoin>();
+        public virtual string Symbol => "";
 
         public CurrencyRepo() 
         {

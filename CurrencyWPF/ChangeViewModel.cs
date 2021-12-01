@@ -13,6 +13,28 @@ namespace CurrencyWPF
     {
         ICurrencyRepo repo;
 
+        public double Value => repo.TotalValue();
+
+        public ChangeViewModel()
+        {
+            repo = new USCurrencyRepo();
+        }
+
+        public List<string> CoinNames 
+        {
+            get 
+            {
+                List<string> list = new List<string>();
+                if (repo == null)
+                    return list;
+                foreach (ICoin coin in repo.ValidCoins) 
+                {
+                    list.Add(coin.Name);
+                }
+                return list;
+            }
+        }
+
         public void MakeChange(Currency currency, float value) 
         {
             switch (currency) 
@@ -36,9 +58,20 @@ namespace CurrencyWPF
             List<string> list = new List<string>();
             foreach (ICoin coin in repo.Coins) 
             {
-                list.Add(coin.GetType().ToString());
+                list.Add($"{coin.Name} {repo.Symbol}{coin.MonetaryValue}");
             }
             return list;
+        }
+
+        /// <summary>
+        /// Adds a coind based on the CoinName index
+        /// </summary>
+        /// <param name="index"></param>
+        public void AddCoin(int index) 
+        {
+            if(index < 0 || index >= CoinNames.Count)
+                return;
+            repo.AddCoin(repo.ValidCoins[index]);
         }
 
     }
