@@ -24,12 +24,12 @@ namespace SportsFinal
 
         public void AddLuck()
         {
-            stats.AddLuck()
+            stats.AddLuck();
         }
 
         public void RemoveLuck()
         {
-            stats.RemoveLuck()
+            stats.RemoveLuck();
         }
     }
 }

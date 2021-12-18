@@ -8,7 +8,7 @@ namespace SportsFinal
 {
     public class Match : IMatch
     {
-        public int Round { get => Score.Round; set => Score.Round = value; };
+        public int Round { get => Score.Round; set => Score.Round = value; }
 
         public ITeam HomeTeam { get; set; }
         public ITeam AwayTeam { get; set; }
@@ -21,7 +21,7 @@ namespace SportsFinal
 
         public string Description { get; protected set; }
 
-        public Match(ITeam home, ITeam away, string name = "My Team", string description = "Awesome Generic Team")
+        public Match(ITeam home, ITeam away, string name = "Match", string description = "Awesome Generic Match")
         {
             HomeTeam = home;
             AwayTeam = away;

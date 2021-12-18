@@ -8,7 +8,7 @@ namespace SportsFinal
 {
     public class Tennis: Sport
     {
-        Tennis() :base("Tenis", "Wacking Balls With Rackets")
+        public Tennis() :base("Tenis", "Wacking Balls With Rackets")
         {
         
         }

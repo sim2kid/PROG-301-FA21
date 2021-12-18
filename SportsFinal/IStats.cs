@@ -11,6 +11,6 @@ namespace SportsFinal
         public Dictionary<string, float> AllStats { get; }
         public void SetStat(string statName, float value);
         public void ChangeStat(string statName, float value);
-        public float GetStat(string statName)
+        public float GetStat(string statName);
     }
 }

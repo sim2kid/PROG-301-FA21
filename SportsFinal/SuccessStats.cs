@@ -8,7 +8,7 @@ namespace SportsFinal
 {
     public class SuccessStats: Stats
     {
-        public int Wins { get => (int)GetStat("Wins"); set => SetStat("Wins", value); }
-        public int Loses { get => (int)GetStat("Loses"); set => SetStat("Loses", value); }
+        public int Wins { get => (int)GetStat("Wins"); set => SetStat("Wins", Math.Max(0, value)); }
+        public int Loses { get => (int)GetStat("Loses"); set => SetStat("Loses", Math.Max(0, value)); }
     }
 }
